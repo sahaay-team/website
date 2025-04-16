@@ -86,7 +86,7 @@ export default function Header() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <h1 className="text-2xl font-kamerik text-primary">Sahaay</h1>
+            <h1 className="text-2xl font-kamerik text-primary text-orange-500">Sahaay</h1>
           </Link>
 
           {/* Navigation */}

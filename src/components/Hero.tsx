@@ -1,7 +1,25 @@
-import React from "react";
+"use client"
+
+import React, { useState } from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function Hero() {
+  const [searchQuery, setSearchQuery] = useState("");
+  const router = useRouter();
+
+  const handleSearch = () => {
+    if (searchQuery.trim()) {
+      router.push(`/freelancers?type=${encodeURIComponent(searchQuery)}`);
+    }
+  };
+
+  const handleKeyPress = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter') {
+      handleSearch();
+    }
+  };
+
   return (
     <section className="relative min-h-[650px] flex items-end">
       {/* Dark overlay for background image */}
@@ -32,10 +50,16 @@ export default function Hero() {
             <div className="flex items-center rounded-lg overflow-hidden bg-white">
               <input
                 type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                onKeyPress={handleKeyPress}
                 placeholder="Search for any service..."
                 className="w-full px-4 py-3 outline-none text-gray-700"
               />
-              <button className="bg-primary text-white px-6 py-4 hover:bg-primary-hover transition-colors">
+              <button 
+                onClick={handleSearch}
+                className="bg-primary text-white px-6 py-4 hover:bg-primary-hover transition-colors"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5"
