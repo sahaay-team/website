@@ -1,30 +1,23 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
-import Header from "@/components/Header"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Find Service Providers",
-  description: "Find skilled service providers for your tasks",
+  title: "Arjun M - Professional Carpenter",
+  description:
+    "Professional portfolio of Arjun M, a skilled carpenter specializing in custom furniture, home renovations, and woodworking.",
 }
 
-export default function FreelancersLayout({
+export default function SellersLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
   return (
     <div className={inter.className}>
-      <Header />
-      <main>
-        {children}
-      </main>
+      <main>{children}</main>
     </div>
   )
 }
-
-
-
-

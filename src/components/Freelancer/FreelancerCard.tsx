@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import Link from "next/link"
 import { Zap, Star, Award, ThumbsUp } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
@@ -19,6 +20,7 @@ interface FreelancerCardProps {
     text: string
   }
   badges: string[]
+  id?: string // Add this prop
 }
 
 export function FreelancerCard({
@@ -31,8 +33,12 @@ export function FreelancerCard({
   totalTasks,
   description,
   review,
-  badges
+  badges,
+  id // Add this prop
 }: FreelancerCardProps) {
+  // Generate the ID from name if not provided
+  const sellerId = id || name.toLowerCase().replace(/\s+/g, '-');
+
   return (
     <div className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
       <div className="p-8 grid md:grid-cols-[180px_1fr_auto] gap-8">
@@ -46,9 +52,12 @@ export function FreelancerCard({
               className="object-cover w-full h-full"
             />
           </div>
-          <a href="#" className="text-orange-500 text-sm font-medium text-center hover:underline">
+          <Link 
+            href={`/sellers/${name.toLowerCase().replace(/\s+/g, '-').replace(/\.$/g, '')}`}
+            className="text-orange-500 text-sm font-medium text-center hover:underline"
+          >
             View Profile
-          </a>
+          </Link>
           <Button className="mt-4 bg-orange-500 hover:bg-orange-600 text-white shadow-md hover:shadow-lg transition-shadow duration-300">
             Select & Continue
           </Button>
@@ -104,3 +113,6 @@ export function FreelancerCard({
     </div>
   )
 }
+
+
+

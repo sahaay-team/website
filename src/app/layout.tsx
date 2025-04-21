@@ -2,6 +2,8 @@ import type { Metadata } from "next"
 import "./globals.css"
 import { lexend } from "../../styles/fonts"
 import { cn } from "@/lib/utils"
+import { ThemeProvider } from "@/components/theme-provider"
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,15 +16,19 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased",
+          "min-h-screen bg-background font-sans antialiased flex flex-col",
           lexend.className
         )}
-        suppressHydrationWarning
       >
-        {children}
+        <ThemeProvider>
+          <div className="flex-1">
+            {children}
+          </div>
+          
+        </ThemeProvider>
       </body>
     </html>
   )
