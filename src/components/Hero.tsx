@@ -114,7 +114,7 @@ export default function Hero() {
                 </svg>
               </a>
               <a
-                href="#"
+                href="/freelancers?type=Cleaning%20and%20Pest%20control"
                 className="bg-primary/10 hover:bg-primary/80 transition-colors text-black px-4 py-2 rounded-full text-sm flex items-center"
               >
                 Cleaning and Pest control
