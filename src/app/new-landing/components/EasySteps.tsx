@@ -1,3 +1,7 @@
+// TODO: Main idea of this page was to have a full background image for this section. 
+// The image will have people oin the far right side and rest of hte left side would be plain and thats where the text would be.
+// Currently iamge is not found.
+
 "use client";
 
 import React from "react";

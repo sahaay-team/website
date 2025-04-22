@@ -1,3 +1,6 @@
+// TODO: ADD IMAGES FOR THE DIFF PEOPLE
+
+
 "use client"
 
 import { useEffect, useRef } from "react"

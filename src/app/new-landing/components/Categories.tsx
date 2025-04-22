@@ -1,3 +1,5 @@
+// TODO: Current animations are fine. But can be better.  
+
 "use client";
 import React from "react";
 import Link from "next/link";

@@ -1,3 +1,5 @@
+// TODO : NAVNBAR ON SCROLL LOOKS AWFULL , needs to be fixed.
+
 "use client"
 
 import Link from "next/link"
