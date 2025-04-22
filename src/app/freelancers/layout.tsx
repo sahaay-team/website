@@ -2,6 +2,8 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import Header from "@/components/Header"
+import { SidebarProvider } from "@/components/ui/sidebar"
+
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -16,15 +18,13 @@ export default function FreelancersLayout({
   children: React.ReactNode
 }>) {
   return (
-    <div className={inter.className}>
-      <Header />
-      <main>
-        {children}
-      </main>
-    </div>
+ 
+      <div className={inter.className}>
+        <Header />
+        <SidebarProvider>
+          <main className="flex">{children}</main>
+        </SidebarProvider>
+      </div>
+
   )
 }
-
-
-
-

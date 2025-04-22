@@ -1,11 +1,57 @@
 export const sellersData = {
   "priya-s": {
     name: "Priya S.",
-    title: "Professional House Cleaner",
+    title: "Cleaning Services",
     location: "Mumbai, India",
     experience: "10+ Years Experience",
     image: "/img/priya.jpg",
     about: "Namaste! With 10 years of experience in home cleaning, I ensure your space sparkles like new. I use eco-friendly products and pay attention to every detail.",
+    languages: [
+      { name: "Hindi", level: 5 },
+      { name: "English", level: 4 },
+      { name: "Marathi", level: 5 }
+    ],
+    skills: [
+      "Deep Cleaning",
+      "Sanitization",
+      "Kitchen Cleaning",
+      "Bathroom Cleaning",
+      "Window Cleaning",
+      "Floor Maintenance",
+      "Eco-friendly Products",
+      "Organizing"
+    ],
+    certifications: [
+      {
+        title: "Professional Cleaning Certification",
+        issuer: "Cleaning Institute of India",
+        year: "2019"
+      },
+      {
+        title: "Green Cleaning Specialist",
+        issuer: "Eco Clean Association",
+        year: "2020"
+      },
+      {
+        title: "Commercial Cleaning Safety",
+        issuer: "Safety First Institute",
+        year: "2021"
+      }
+    ],
+    industries: [
+      {
+        name: "Residential",
+        icon: "Home"
+      },
+      {
+        name: "Commercial",
+        icon: "Building"
+      },
+      {
+        name: "Healthcare",
+        icon: "FirstAid"
+      }
+    ],
     services: [
       {
         name: "Deep Cleaning",
@@ -58,6 +104,52 @@ export const sellersData = {
     experience: "8+ Years Experience",
     image: "/img/amit.jpg",
     about: "I have 8 years of experience in cleaning homes, offices, and commercial spaces across Delhi NCR. I'm skilled in deep cleaning and regular maintenance.",
+    languages: [
+      { name: "Hindi", level: 5 },
+      { name: "English", level: 4 },
+      { name: "Punjabi", level: 5 }
+    ],
+    skills: [
+      "Commercial Cleaning",
+      "Floor Maintenance",
+      "Carpet Cleaning",
+      "Window Cleaning",
+      "Pressure Washing",
+      "Office Sanitization",
+      "Equipment Operation",
+      "Safety Protocols"
+    ],
+    certifications: [
+      {
+        title: "Commercial Cleaning Expert",
+        issuer: "Delhi Cleaning Association",
+        year: "2020"
+      },
+      {
+        title: "Industrial Safety Certificate",
+        issuer: "Safety Standards India",
+        year: "2021"
+      },
+      {
+        title: "Equipment Operation Specialist",
+        issuer: "Clean Tech Institute",
+        year: "2022"
+      }
+    ],
+    industries: [
+      {
+        name: "Commercial",
+        icon: "Building"
+      },
+      {
+        name: "Industrial",
+        icon: "Factory"
+      },
+      {
+        name: "Retail",
+        icon: "Store"
+      }
+    ],
     services: [
       {
         name: "Commercial Cleaning",
