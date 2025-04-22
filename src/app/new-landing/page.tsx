@@ -1,13 +1,15 @@
-"use client"
+"use client";
 
-import { Search, MapPin, ArrowRight } from "lucide-react"
-import Navbar from "./components/Navbar"
-import Categories from "./components/Categories"
-import Image from "next/image"
-import BgImage from "../../../public/img/hero-bg.png"
-import { useState } from "react"
-import EasySteps from "@/app/new-landing/components/EasySteps"
-import TrustedProfessionals from "@/app/new-landing/components/TrustedProfessionals"
+import { Search, MapPin, ArrowRight } from "lucide-react";
+import Navbar from "./components/Navbar";
+import Categories from "./components/Categories";
+import Image from "next/image";
+import BgImage from "../../../public/img/hero-bg.png";
+import { useState } from "react";
+import EasySteps from "@/app/new-landing/components/EasySteps";
+import TrustedProfessionals from "@/app/new-landing/components/TrustedProfessionals";
+import LocalWorkforce from "@/app/new-landing/components/LoacalWorkforce";
+import Testimonials from "@/app/new-landing/components/Testimonials";
 
 export default function NewLanding() {
   return (
@@ -23,7 +25,7 @@ export default function NewLanding() {
             transform: "scale(1)", // Add this line to zoom out (1.2 = 120% scale)
             transformOrigin: "center", // Ensures scaling happens from the center
             backgroundRepeat: "no-repeat",
-            filter: "brightness(0.5)" // Darkens the image slightly for better text visibility
+            filter: "brightness(0.5)", // Darkens the image slightly for better text visibility
           }}
         />
 
@@ -70,15 +72,18 @@ export default function NewLanding() {
 
       {/* Categories Section */}
       <Categories />
-      
+
       {/* Easy Steps Section */}
       <EasySteps />
+
+      {/* Local Workforce Section */}
+      <LocalWorkforce />
+
+      {/* Testimonials Section */}
+      <Testimonials />
 
       {/* Trusted Professionals Section */}
       <TrustedProfessionals />
     </>
-  )
+  );
 }
-
-
-

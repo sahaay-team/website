@@ -2,9 +2,16 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import ServiceCategories from "@/components/ServiceCategories";
 import HowItWorks from "@/components/HowItWorks";
-import Testimonials from "@/components/Testimonials";
-import CTASection from "@/components/CTASection";
+import ExpertShowcase from "@/components/ExpertShowcase"
+import LocalImpact from "@/components/LocalImpact";
+import SimpleSteps from "@/components/SimpleSteps";
+import TimeValue from "@/components/TimeValue";
+import EnhancedTestimonials from "@/components/EnhancedTestimonials";
+import LocalHeroes from "@/components/LocalHeroes";
 import Footer from "@/components/Footer";
+
+
+
 
 export default function Home() {
   return (
@@ -14,10 +21,14 @@ export default function Home() {
         <Hero />
         <ServiceCategories />
         <HowItWorks />
-        <Testimonials />
-        <CTASection />
+        <ExpertShowcase />
+        <LocalImpact />
+        <SimpleSteps />
+        <TimeValue />
+        <EnhancedTestimonials />
+        <LocalHeroes />
+        <Footer />
       </main>
-      <Footer />
     </div>
   );
 }

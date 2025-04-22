@@ -35,17 +35,22 @@ const Step = ({ number, title, description, icon, index }: StepProps) => {
   }, [index]);
 
   return (
-    <div ref={stepRef} className="flex flex-col items-center text-center">
+    <div
+      ref={stepRef}
+      className="flex flex-col items-center text-center group w-full"
+    >
       <div className="relative mb-6 overflow-hidden">
-        <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center text-primary mb-2 hover:scale-105 transition-transform duration-300">
+        <div className="w-20 h-20 bg-[#FF5C39]/10 rounded-full flex items-center justify-center text-[#FF5C39] mb-2 hover:scale-105 transition-transform duration-300 group-hover:shadow-md">
           {icon}
         </div>
-        <div className="absolute -top-2 -right-2 w-8 h-8 bg-white rounded-full border-2 border-primary flex items-center justify-center text-primary font-bold shadow-sm hover:scale-110 transition-transform duration-200">
+        <div className="absolute -top-2 -right-2 w-8 h-8 bg-white rounded-full border-2 border-[#FF5C39] flex items-center justify-center text-[#FF5C39] font-bold shadow-sm hover:scale-110 transition-transform duration-200">
           {number}
         </div>
       </div>
       <h3 className="text-xl font-semibold mb-3 text-gray-800">{title}</h3>
-      <p className="text-gray-600 text-sm">{description}</p>
+      <p className="text-gray-600 text-sm max-w-[200px] mx-auto">
+        {description}
+      </p>
     </div>
   );
 };
@@ -75,7 +80,7 @@ const Connector = ({ index }: { index: number }) => {
     <div className="hidden md:block w-full h-0.5 bg-gray-200 relative">
       <div
         ref={connectorRef}
-        className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-primary/30 to-transparent"
+        className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-[#FF5C39]/30 to-transparent"
       ></div>
     </div>
   );
@@ -195,17 +200,42 @@ export default function HowItWorks() {
   return (
     <section
       ref={sectionRef}
-      className="py-12 mt-12 bg-[#FFF3F1] max-w-[95rem] mx-auto rounded-2xl transform-gpu"
+      className="relative py-16 md:py-20 overflow-hidden"
     >
-      <div className="container mx-auto py-4 px-10">
-        <div className="mb-14 text-left">
+      {/* Subtle background pattern */}
+      {/* <div className="w-full absolute inset-0 bg-[#F8F9FC] z-0">
+        <div
+          className="absolute inset-0 w-full"
+          style={{
+            backgroundImage:
+              "linear-gradient(to right, #E5E5E5 1px, transparent 1px), linear-gradient(to bottom, #E5E5E5 1px, transparent 1px)",
+            backgroundSize: "40px 40px",
+            opacity: 0.3,
+          }}
+        ></div>
+      </div> */}
+
+      <div className="container mx-auto py-4 px-6 md:px-10 relative z-10">
+        <div className="mb-14 text-left relative">
+          {/* Accent elements */}
+          <div className="absolute -top-6 -left-6 -z-10 hidden md:block">
+            <div className="bg-[#5D9DF1]/60 h-10 w-10 rounded-full"></div>
+          </div>
+          <div className="absolute top-10 right-10 -z-10 hidden md:block">
+            <div className="bg-[#FFD166] h-8 w-8 rounded-full opacity-70"></div>
+          </div>
+
           <h2
             ref={titleRef}
-            className="text-3xl md:text-5xl text-gray-900 mb-4"
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4"
           >
-            How It Works
+            How It
+            <span className="text-[#FF5C39] relative ml-2">
+              Works
+              <span className="absolute bottom-1 left-0 w-full h-2 bg-[#FFD166]/30 -z-10 rounded-full"></span>
+            </span>
           </h2>
-          <p ref={descRef} className="text-gray-600 max-w-2xl text-lg">
+          <p ref={descRef} className="text-gray-700 max-w-2xl text-lg">
             Getting help is easy with Sahaay. Follow these simple steps to
             connect with skilled professionals.
           </p>
@@ -226,7 +256,7 @@ export default function HowItWorks() {
           <a
             ref={buttonRef}
             href="/how-it-works"
-            className="inline-flex items-center bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors shadow-md hover:shadow-lg"
+            className="inline-flex items-center bg-[#FF5C39] text-white px-8 py-3 rounded-lg hover:bg-[#FF7D5F] transition-all shadow-md hover:shadow-lg hover:-translate-y-1 duration-300"
           >
             Learn More
             <svg

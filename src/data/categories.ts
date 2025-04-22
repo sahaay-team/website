@@ -14,7 +14,7 @@ import {
   Wifi,
   Camera,
   Laptop,
-  Dumbbell
+  Dumbbell,
 } from "lucide-react";
 
 export const serviceCategories = [

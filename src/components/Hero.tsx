@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React, { useState } from "react";
 import Image from "next/image";
@@ -15,191 +15,176 @@ export default function Hero() {
   };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
-    if (e.key === 'Enter') {
+    if (e.key === "Enter") {
       handleSearch();
     }
   };
 
   return (
-    <section className="relative min-h-[650px] flex items-end">
-      {/* Dark overlay for background image */}
-      <div className="absolute inset-0 bg-[#F6F4F0] z-10"></div>
+    <section className="relative py-16 md:py-24 overflow-hidden">
+      {/* Subtle background pattern */}
 
-      {/* Background image - would be replaced with an actual image */}
-      <div className="absolute inset-0 bg-[#F6F4F0]">
-        {/* You can replace this with an actual image like:
-        <Image 
-          src="/images/hero-bg.jpg" 
-          alt="Background" 
-          fill 
-          className="object-cover"
-          priority
-        /> */}
-      </div>
 
-      <div className="container mx-auto px-4 relative z-20 text-black max-w-[85rem] mb-10">
-        <div className="max-w-4xl">
-          <h1 className="text-4xl md:text-5xl lg:text-7xl leading-tight mb-6">
-            Your chores, our pros
-            <br />
-            service made simple
-          </h1>
+      <div className="container mx-auto px-4 relative z-20 max-w-[85rem]">
+        <div className="grid md:grid-cols-2 gap-8 items-center">
+          {/* Left column - Text and search */}
+          <div className="relative">
+            {/* Accent elements */}
+            <div className="absolute -top-6 -left-6 md:-left-10 -z-10 hidden md:block">
+              {/* <div className="bg-[#5D9DF1]/60 h-12 w-12 rounded-full"></div> */}
+            </div>
 
-          {/* Search box */}
-          <div className="relative max-w-[55rem] ">
-            <div className="flex items-center rounded-lg overflow-hidden bg-white">
-              <input
-                type="text"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                onKeyPress={handleKeyPress}
-                placeholder="Search for any service..."
-                className="w-full px-4 py-3 outline-none text-gray-700"
-              />
-              <button 
-                onClick={handleSearch}
-                className="bg-primary text-white px-6 py-4 hover:bg-primary-hover transition-colors"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+              Your chores,
+              <br />
+              <span className="text-[#FF5C39] relative">
+                our pros
+                <span className="absolute bottom-1 left-0 w-full h-2 bg-[#FFD166]/30 -z-10 rounded-full"></span>
+              </span>
+            </h1>
+
+            <p className="text-lg md:text-xl mb-8 text-gray-700 max-w-lg">
+              From plumbers to painters, find reliable service professionals for
+              all your home needs.
+            </p>
+
+            {/* Search box */}
+            <div className="relative max-w-xl mb-8">
+              <div className="flex items-center rounded-lg overflow-hidden bg-white border border-gray-200 shadow-md hover:shadow-lg transition-shadow duration-300">
+                <input
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  onKeyPress={handleKeyPress}
+                  placeholder="Search for any service..."
+                  className="w-full px-6 py-4 outline-none text-gray-700 text-lg"
+                />
+                <button
+                  onClick={handleSearch}
+                  className="bg-[#FF5C39] text-white px-6 py-4 hover:bg-[#FF7D5F] transition-colors"
                 >
-                  <path
-                    fillRule="evenodd"
-                    d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </button>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </button>
+              </div>
+
+              {/* "Book a Call" button */}
+              <div className="mt-8 flex justify-center md:justify-start">
+                <a
+                  href="/book"
+                  className="inline-block bg-[#FF5C39] hover:bg-[#FF7D5F] text-white text-lg font-medium px-8 py-3 rounded-lg shadow-md transition-all hover:shadow-lg hover:-translate-y-1 duration-300"
+                >
+                  Book a Service
+                </a>
+              </div>
             </div>
 
             {/* Popular service tags */}
-            <div className="mt-5 flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-3 mt-4">
               <a
                 href="#"
-                className="bg-primary/10 hover:bg-primary/80 transition-colors text-black px-4 py-2 rounded-full text-sm flex items-center"
+                className="bg-white hover:bg-gray-50 transition-colors text-gray-800 px-4 py-2 rounded-full text-sm border border-gray-200 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
               >
-                AC and Appliance repair
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-4 w-4 ml-1"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-                    clipRule="evenodd"
-                  />
-                </svg>
+                AC Repair
               </a>
               <a
                 href="#"
-                className="bg-primary/10 hover:bg-primary/80 transition-colors text-black px-4 py-2 rounded-full text-sm flex items-center"
+                className="bg-white hover:bg-gray-50 transition-colors text-gray-800 px-4 py-2 rounded-full text-sm border border-gray-200 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
               >
-                Electrician, plumbing, carpentary
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-4 w-4 ml-1"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-                    clipRule="evenodd"
-                  />
-                </svg>
+                Plumbing
               </a>
               <a
                 href="/freelancers?type=Cleaning%20and%20Pest%20control"
-                className="bg-primary/10 hover:bg-primary/80 transition-colors text-black px-4 py-2 rounded-full text-sm flex items-center"
+                className="bg-white hover:bg-gray-50 transition-colors text-gray-800 px-4 py-2 rounded-full text-sm border border-gray-200 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
               >
-                Cleaning and Pest control
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-4 w-4 ml-1"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-                    clipRule="evenodd"
-                  />
-                </svg>
+                Cleaning
               </a>
               <a
                 href="#"
-                className="bg-primary/10 hover:bg-primary/80 transition-colors text-black px-4 py-2 rounded-full text-sm flex items-center"
+                className="bg-white hover:bg-gray-50 transition-colors text-gray-800 px-4 py-2 rounded-full text-sm border border-gray-200 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
               >
-                architecture & interior design
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-4 w-4 ml-1"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-                    clipRule="evenodd"
-                  />
-                </svg>
+                Interior Design
               </a>
             </div>
           </div>
 
-          {/* Stats section */}
-          <div className="mt-12">
-            <div className="flex flex-wrap gap-8 md:gap-16">
-              <div className="flex items-center gap-4">
-                <div className="text-gray-800">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-10 w-10"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="text-3xl">4.8</h3>
-                  <p className="text-gray-600">Service Rating</p>
-                </div>
+          {/* Right column - Illustration */}
+          <div className="relative hidden md:block">
+            {/* Small accent elements */}
+            <div className="absolute top-0 right-0 z-10">
+              <div className="bg-[#FFD166] h-16 w-16 rounded-full opacity-80"></div>
+            </div>
+            <div className="absolute bottom-12 right-12 z-10">
+              <div className="bg-[#5D9DF1]/40 h-10 w-10 rounded-full"></div>
+            </div>
+
+            {/* Illustration container */}
+            <div className="bg-white rounded-xl border border-gray-200 shadow-lg p-6 h-[400px] flex items-center justify-center relative overflow-hidden group hover:shadow-xl transition-shadow duration-300">
+              {/* Decorative elements */}
+              <div className="absolute top-0 left-0 w-full h-full">
+                <div className="absolute top-0 left-0 w-20 h-20 bg-[#5D9DF1]/10 rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
+                <div className="absolute bottom-0 right-0 w-32 h-32 bg-[#FF5C39]/10 rounded-full transform translate-x-1/4 translate-y-1/4"></div>
+                <div className="absolute top-1/2 left-1/2 w-40 h-40 bg-[#FFD166]/10 rounded-full transform -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
 
-              <div className="flex items-center gap-4">
-                <div className="text-gray-800">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-10 w-10"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="text-3xl">12M+</h3>
-                  <p className="text-gray-600">Customers Globally</p>
+              <div className="text-center p-8 relative z-10">
+                <p className="text-xl font-semibold mb-4 text-gray-800">
+                  Professional Services
+                </p>
+                <p className="text-gray-600">
+                  Vetted professionals ready to help with your home needs
+                </p>
+
+                {/* Add illustration or image here */}
+                <div className="mt-8 flex justify-center">
+                  <div className="w-48 h-48 bg-gray-100 rounded-full flex items-center justify-center overflow-hidden group-hover:scale-105 transition-transform duration-300">
+                    <p className="text-gray-400">Service illustration</p>
+                  </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Stats section */}
+        <div className="mt-16 md:mt-20">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+            <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-5 text-center hover:shadow-md transition-shadow duration-300 hover:-translate-y-1 transform transition-transform">
+              <h3 className="text-2xl md:text-3xl font-bold text-[#FF5C39]">
+                4.8
+              </h3>
+              <p className="text-gray-700 font-medium">Service Rating</p>
+            </div>
+
+            <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-5 text-center hover:shadow-md transition-shadow duration-300 hover:-translate-y-1 transform transition-transform">
+              <h3 className="text-2xl md:text-3xl font-bold text-[#FF5C39]">
+                12M+
+              </h3>
+              <p className="text-gray-700 font-medium">Customers</p>
+            </div>
+
+            <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-5 text-center hover:shadow-md transition-shadow duration-300 hover:-translate-y-1 transform transition-transform">
+              <h3 className="text-2xl md:text-3xl font-bold text-[#FF5C39]">
+                5K+
+              </h3>
+              <p className="text-gray-700 font-medium">Service Pros</p>
+            </div>
+
+            <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-5 text-center hover:shadow-md transition-shadow duration-300 hover:-translate-y-1 transform transition-transform">
+              <h3 className="text-2xl md:text-3xl font-bold text-[#FF5C39]">
+                24/7
+              </h3>
+              <p className="text-gray-700 font-medium">Support</p>
             </div>
           </div>
         </div>
