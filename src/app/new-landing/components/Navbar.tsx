@@ -102,7 +102,7 @@ export default function Navbar() {
               About Us
             </Link>
             <Link 
-              href="/login" 
+              href="/new-landing/login" 
               className={`transition-colors ${
                 scrolled 
                   ? 'text-black hover:text-orange-500' 
