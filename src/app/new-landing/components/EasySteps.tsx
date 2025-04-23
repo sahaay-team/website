@@ -60,7 +60,7 @@ export default function EasySteps() {
   };
 
   return (
-    <section className="relative h-screen flex items-center" ref={ref}>
+    <section id="easy-steps" className="relative h-screen flex items-center" ref={ref}>
       <div className="absolute inset-0 z-0">
         <Image
           src={EasyStepsBGImg}
@@ -120,6 +120,7 @@ export default function EasySteps() {
     </section>
   );
 }
+
 
 
 

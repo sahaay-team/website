@@ -168,7 +168,7 @@ export default function Footer() {
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
                 <MapPin className="h-5 w-5 text-[#FF5C39] mr-2" />
-                <span className="text-gray-600">Mumbai, India</span>
+                <span className="text-gray-600">Bangalore, India</span>
               </motion.div>
             </div>
             <div className="text-gray-500 text-sm">
