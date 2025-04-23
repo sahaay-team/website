@@ -3,152 +3,130 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Award, MapPin, Users } from "lucide-react";
 
-type StatCardProps = {
-  icon: React.ReactNode;
-  title: string;
+type StatProps = {
   value: string;
+  title: string;
   description: string;
-  index: number;
 };
 
-const StatCard = ({
-  icon,
-  title,
-  value,
-  description,
-  index,
-}: StatCardProps) => {
+const Stat = ({ value, title, description }: StatProps) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
-      whileInView={{
-        opacity: 1,
-        y: 0,
-        transition: {
-          delay: index * 0.1,
-          duration: 0.5,
-        },
-      }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
       viewport={{ once: true }}
-      className="bg-white rounded-xl border border-gray-200 shadow-sm p-6 flex flex-col items-center text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+      className="text-center w-full md:w-1/3 px-4 lg:px-8"
     >
-      <div className="mb-4 text-[#FF5C39]">{icon}</div>
-      <h3 className="text-lg font-semibold text-gray-800 mb-1">{title}</h3>
-      <div className="text-3xl font-bold text-[#FF5C39] my-2">{value}</div>
-      <p className="text-gray-600 text-sm">{description}</p>
+      <div className="flex flex-col items-center">
+        <h3 className="text-7xl font-bold text-black tracking-tight">{value}</h3>
+        <p className="mt-6 text-xl font-medium text-gray-900">{title}</p>
+        <p className="text-base mt-1 text-gray-500">{description}</p>
+      </div>
     </motion.div>
   );
 };
 
 export default function LocalWorkforce() {
-  const stats = [
-    {
-      icon: <Users className="h-8 w-8" />,
-      title: "Local Professionals",
-      value: "5,000+",
-      description: "Skilled workers earning a living through our platform",
-    },
-    {
-      icon: <Award className="h-8 w-8" />,
-      title: "Years of Impact",
-      value: "Since 2025",
-      description: "Supporting communities and small businesses",
-    },
-    {
-      icon: <MapPin className="h-8 w-8" />,
-      title: "Cities Covered",
-      value: "50+",
-      description: "Across major Indian cities and growing",
-    },
-  ];
-
   return (
-    <section className="relative py-16 md:py-24 overflow-hidden">
-      <div className="container mx-auto px-4 relative z-10 max-w-[85rem]">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Left column - Text and stats */}
-          <div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-                Empowering
-                <span className="bg-gradient-to-r from-orange-600 to-orange-400 bg-clip-text text-transparent relative mx-2">
-                  local workforce
-                  <span className="absolute bottom-1 left-0 w-full h-2 bg-[#FFD166]/30 -z-10 rounded-full"></span>
-                </span>
-                since 2025
-              </h2>
-              <p className="text-lg text-gray-700 mb-8">
-                We're committed to supporting local professionals and small
-                businesses in your community. Our platform connects skilled
-                workers with the people who need them most.
-              </p>
-
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
-                {stats.map((stat, index) => (
-                  <StatCard
-                    key={index}
-                    icon={stat.icon}
-                    title={stat.title}
-                    value={stat.value}
-                    description={stat.description}
-                    index={index}
-                  />
-                ))}
-                
-              </div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-                viewport={{ once: true }}
-              >
-                <a
-                  href="/about-us"
-                  className="inline-block bg-white hover:bg-gray-50 bg-gradient-to-r from-orange-600 to-orange-400 bg-clip-text text-transparent border border-[#FF5C39] text-lg font-medium px-8 py-3 rounded-lg shadow-sm transition-all hover:shadow-md hover:-translate-y-1 duration-300"
-                >
-                  Learn About Our Impact
-                </a>
-              </motion.div>
-            </motion.div>
-          </div>
-
-          {/* Right column - Image */}
-          <div className="relative order-first md:order-last">
-            <div className="absolute -top-6 -right-6 -z-10 hidden md:block"></div>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-              className="relative h-[400px] rounded-xl overflow-hidden border-2 border-white shadow-lg"
-            >
+    <section className="py-10 bg-white sm:py-16 lg:py-24">
+      <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
+        <div className="max-w-2xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="flex items-center justify-center"
+          >
+            <div className="w-20 h-20 -mr-6 overflow-hidden bg-gray-300 rounded-full">
               <Image
-                src="/images/local-heroes.jpg"
-                alt="Local service professionals"
-                fill
-                className="object-cover"
+                src="https://cdn.rareblocks.xyz/collection/celebration/images/cta/2/female-avatar-1.jpg"
+                alt="Female professional 1"
+                width={80}
+                height={80}
+                className="object-cover w-full h-full"
               />
+            </div>
 
-              {/* Overlay card */}
-              <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur-sm rounded-lg p-4 border border-gray-100 shadow-md">
-                <p className="text-sm font-medium text-gray-800">
-                  Local heroes in action
-                </p>
-                <p className="text-xs text-gray-600 mt-1">
-                  Building trust & community impact
-                </p>
-              </div>
-            </motion.div>
+            <div className="relative overflow-hidden bg-gray-300 border-8 border-white rounded-full w-28 h-28">
+              <Image
+                src="https://cdn.rareblocks.xyz/collection/celebration/images/cta/2/male-avatar-1.jpg"
+                alt="Male professional"
+                width={112}
+                height={112}
+                className="object-cover w-full h-full"
+              />
+            </div>
+
+            <div className="w-20 h-20 -ml-6 overflow-hidden bg-gray-300 rounded-full">
+              <Image
+                src="https://cdn.rareblocks.xyz/collection/celebration/images/cta/2/female-avatar-2.jpg"
+                alt="Female professional 2"
+                width={80}
+                height={80}
+                className="object-cover w-full h-full"
+              />
+            </div>
+          </motion.div>
+
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="mt-8 text-3xl font-bold leading-tight text-black lg:mt-12 sm:text-4xl lg:text-5xl"
+          >
+            Empowering local talent and businesses{" "}
+            <span className="relative">
+              <span className="relative z-10">since 2025</span>
+              <span className="absolute bottom-0 left-0 w-full h-1.5 bg-gradient-to-r from-orange-600 to-yellow-400"></span>
+            </span>
+          </motion.h2>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            viewport={{ once: true }}
+            className="max-w-xl mx-auto mt-6 text-xl text-gray-600 md:mt-10"
+          >
+            We're committed to supporting local professionals and small businesses
+            in your community. Our platform connects skilled workers with the
+            people who need them most.
+          </motion.p>
+
+          {/* Stats section with proper centering */}
+          <div className="w-full max-w-5xl mx-auto mt-16">
+            <div className="flex flex-col md:flex-row items-center justify-center space-x-24">
+              <Stat
+                value="50K+"
+                title="Active Professionals"
+                description="Skilled workers across India"
+              />
+              <Stat
+                value="₹2.5Cr+"
+                title="Monthly Earnings"
+                description="Generated for our community"
+              />
+              <Stat
+                value="92%"
+                title="Booking Rate"
+                description="Success rate for verified pros"
+              />
+            </div>
           </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="mt-16"
+          >
+            
+          </motion.div>
         </div>
       </div>
     </section>

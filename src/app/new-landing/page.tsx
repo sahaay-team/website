@@ -7,10 +7,11 @@ import Image from "next/image";
 import BgImage from "../../../public/img/hero-bg.png";
 import { useState } from "react";
 import EasySteps from "@/app/new-landing/components/EasySteps";
-import TrustedProfessionals from "@/app/new-landing/components/TrustedProfessionals";
+
 import LocalWorkforce from "@/app/new-landing/components/LoacalWorkforce";
 import Testimonials from "@/app/new-landing/components/Testimonials";
 import Footer from "@/app/new-landing/components/Footer";
+import CustomerGrid from './components/CustomerGrid';
 
 export default function NewLanding() {
   return (
@@ -79,12 +80,12 @@ export default function NewLanding() {
 
       {/* Local Workforce Section */}
       <LocalWorkforce />
+      <CustomerGrid />
 
       {/* Testimonials Section */}
       <Testimonials />
 
-      {/* Trusted Professionals Section */}
-      <TrustedProfessionals />
+
 
       {/* Footer Section */}
       <Footer />

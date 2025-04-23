@@ -74,6 +74,8 @@ export default function ServiceCategories() {
           ))}
         </div>
       </div>
+      {/* Spacer div */}
+      <div className="h-16"></div>
     </section>
   );
 }

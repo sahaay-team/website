@@ -1,6 +1,6 @@
 // TODO: Main idea of this page was to have a full background image for this section. 
 // The image will have people oin the far right side and rest of hte left side would be plain and thats where the text would be.
-// Currently iamge is not found.
+// Currently iamge is not
 
 "use client";
 
@@ -8,6 +8,7 @@ import React from "react";
 import Image from "next/image";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import EasyStepsBGImg from "../../../../public/img/easysteps_img.jpg";
 
 const steps = [
   {
@@ -22,7 +23,7 @@ const steps = [
   },
   {
     number: "03",
-    title: "Get it done",
+    title: "Get it done!",
     description: "Your task gets completed with quality assurance and satisfaction"
   }
 ];
@@ -30,8 +31,8 @@ const steps = [
 export default function EasySteps() {
   const controls = useAnimation();
   const [ref, inView] = useInView({
-    threshold: 0.5, // Trigger when 20% of the section is visible
-    triggerOnce: true // Only trigger once
+    threshold: 0.5,
+    triggerOnce: true
   });
 
   React.useEffect(() => {
@@ -43,7 +44,6 @@ export default function EasySteps() {
   const containerVariants = {
     hidden: {},
     visible: {
-      opacity: 1, 
       transition: {
         staggerChildren: 0.2,
       },
@@ -60,76 +60,71 @@ export default function EasySteps() {
   };
 
   return (
-    <section className="py-24 bg-white" ref={ref}>
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col lg:flex-row items-center">
-          {/* Left side - 70% */}
-          <div className="w-full lg:w-[70%] pr-8">
-            <motion.h2
-              initial="hidden"
-              animate={controls}
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                  transition: { duration: 0.6 }
-                }
-              }}
-              className="text-4xl md:text-5xl font-bold mb-12"
-            >
-              <span className="bg-gradient-to-r from-orange-600 to-orange-400 bg-clip-text text-transparent">Sahaay</span> is as<br />easy as 1, 2, 3
-            </motion.h2>
+    <section className="relative h-screen flex items-center" ref={ref}>
+      <div className="absolute inset-0 z-0">
+        <Image
+          src={EasyStepsBGImg}
+          alt="Background"
+          fill
+          className="object-cover object-center"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/30" />
+      </div>
 
-            <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              animate={controls}
-              className="space-y-12"
-            >
-              {steps.map((step) => (
-                <motion.div
-                  key={step.number}
-                  variants={itemVariants}
-                  className="flex items-start gap-6"
-                >
-                  <span className="text-4xl font-bold text-primary/90">
-                    {step.number}
-                  </span>
-                  <div>
-                    <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
-                    <p className="text-gray-600">{step.description}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="flex flex-col h-full justify-center">
+          <motion.h2
+            initial="hidden"
+            animate={controls}
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: {
+                opacity: 1,
+                y: 0,
+                transition: { duration: 0.6 }
+              }
+            }}
+            className="text-left mb-12"
+          >
+            <span className="text-white text-7xl font-bold block mb-2">Sahaay</span>
+            <span className="text-white text-5xl font-bold block">is as easy as 1, 2, 3</span>
+          </motion.h2>
 
-          {/* Right side - 30% */}
-          <div className="w-full lg:w-[30%] mt-12 lg:mt-0">
-            <motion.div
-              initial="hidden"
-              animate={controls}
-              variants={{
-                hidden: { opacity: 0, scale: 1 },
-                visible: {
-                  opacity: 1,
-                  scale: 1,
-                  transition: { duration: 0.6, delay: 0.4 }
-                }
-              }}
-              className="relative h-[500px]"
-            >
-              <Image
-                src="/img/easy-steps-illustration.svg"
-                alt="illustration/Image"
-                fill
-                className="object-contain"
-              />
-            </motion.div>
-          </div>
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate={controls}
+            className="space-y-16 w-full max-w-4xl"
+          >
+            {steps.map((step) => (
+              <motion.div
+                key={step.number}
+                variants={itemVariants}
+                className="flex items-start gap-8"
+              >
+                <span className="text-7xl font-bold text-white">
+                  {step.number}
+                </span>
+                <div>
+                  <h3 className="text-3xl font-semibold mb-4 text-white border-b-2 border-white inline-block pb-2">
+                    {step.title}
+                  </h3>
+                  <p className="text-white text-xl leading-relaxed">{step.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </div>
     </section>
   );
 }
+
+
+
+
+
+
+
+
