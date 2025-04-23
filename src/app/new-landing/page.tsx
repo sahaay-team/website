@@ -10,6 +10,7 @@ import EasySteps from "@/app/new-landing/components/EasySteps";
 import TrustedProfessionals from "@/app/new-landing/components/TrustedProfessionals";
 import LocalWorkforce from "@/app/new-landing/components/LoacalWorkforce";
 import Testimonials from "@/app/new-landing/components/Testimonials";
+import Footer from "@/app/new-landing/components/Footer";
 
 export default function NewLanding() {
   return (
@@ -84,6 +85,9 @@ export default function NewLanding() {
 
       {/* Trusted Professionals Section */}
       <TrustedProfessionals />
+
+      {/* Footer Section */}
+      <Footer />
     </>
   );
 }

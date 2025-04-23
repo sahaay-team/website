@@ -16,7 +16,7 @@ export default function Navbar() {
       const currentScrollY = window.scrollY
 
       // Check if scrolled past threshold (e.g., 50px)
-      setScrolled(currentScrollY > 50)
+      setScrolled(currentScrollY > 800)
 
       // Always show navbar at the top of the page
       if (currentScrollY < 50) {
@@ -61,7 +61,7 @@ export default function Navbar() {
               href="/services" 
               className={`transition-colors ${
                 scrolled 
-                  ? 'text-white hover:text-orange-200' 
+                  ? 'text-black hover:text-orange-500' 
                   : 'text-white hover:text-orange-200'
               }`}
             >
@@ -71,7 +71,7 @@ export default function Navbar() {
               href="/categories" 
               className={`transition-colors ${
                 scrolled 
-                  ? 'text-white hover:text-orange-200' 
+                  ? 'text-black hover:text-orange-500' 
                   : 'text-white hover:text-orange-200'
               }`}
             >
@@ -82,7 +82,9 @@ export default function Navbar() {
           {/* Center - Logo */}
           <Link 
             href="/" 
-            className="text-4xl font-bold text-white transition-colors"
+            className={`text-4xl font-bold transition-colors ${
+              scrolled ? 'text-black' : 'text-white'
+            }`}
           >
             Sahaay
           </Link>
@@ -93,7 +95,7 @@ export default function Navbar() {
               href="/about" 
               className={`transition-colors ${
                 scrolled 
-                  ? 'text-white hover:text-orange-200' 
+                  ? 'text-black hover:text-orange-500' 
                   : 'text-white hover:text-orange-200'
               }`}
             >
@@ -103,7 +105,7 @@ export default function Navbar() {
               href="/login" 
               className={`transition-colors ${
                 scrolled 
-                  ? 'text-white hover:text-orange-200' 
+                  ? 'text-black hover:text-orange-500' 
                   : 'text-white hover:text-orange-200'
               }`}
             >

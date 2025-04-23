@@ -43,6 +43,7 @@ export default function EasySteps() {
   const containerVariants = {
     hidden: {},
     visible: {
+      opacity: 1, 
       transition: {
         staggerChildren: 0.2,
       },
@@ -92,7 +93,7 @@ export default function EasySteps() {
                   variants={itemVariants}
                   className="flex items-start gap-6"
                 >
-                  <span className="text-4xl font-bold text-primary/20">
+                  <span className="text-4xl font-bold text-primary/90">
                     {step.number}
                   </span>
                   <div>
@@ -110,7 +111,7 @@ export default function EasySteps() {
               initial="hidden"
               animate={controls}
               variants={{
-                hidden: { opacity: 0, scale: 0.9 },
+                hidden: { opacity: 0, scale: 1 },
                 visible: {
                   opacity: 1,
                   scale: 1,

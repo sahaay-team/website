@@ -78,7 +78,7 @@ export default function LocalWorkforce() {
             >
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
                 Empowering
-                <span className="text-[#FF5C39] relative mx-2">
+                <span className="bg-gradient-to-r from-orange-600 to-orange-400 bg-clip-text text-transparent relative mx-2">
                   local workforce
                   <span className="absolute bottom-1 left-0 w-full h-2 bg-[#FFD166]/30 -z-10 rounded-full"></span>
                 </span>
@@ -101,6 +101,7 @@ export default function LocalWorkforce() {
                     index={index}
                   />
                 ))}
+                
               </div>
 
               <motion.div
@@ -111,7 +112,7 @@ export default function LocalWorkforce() {
               >
                 <a
                   href="/about-us"
-                  className="inline-block bg-white hover:bg-gray-50 text-[#FF5C39] border border-[#FF5C39] text-lg font-medium px-8 py-3 rounded-lg shadow-sm transition-all hover:shadow-md hover:-translate-y-1 duration-300"
+                  className="inline-block bg-white hover:bg-gray-50 bg-gradient-to-r from-orange-600 to-orange-400 bg-clip-text text-transparent border border-[#FF5C39] text-lg font-medium px-8 py-3 rounded-lg shadow-sm transition-all hover:shadow-md hover:-translate-y-1 duration-300"
                 >
                   Learn About Our Impact
                 </a>
