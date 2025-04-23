@@ -20,7 +20,9 @@ const Stat = ({ value, title, description }: StatProps) => {
       className="text-center w-full md:w-1/3 px-4 lg:px-8"
     >
       <div className="flex flex-col items-center">
-        <h3 className="text-7xl font-bold text-black tracking-tight">{value}</h3>
+        <h3 className="text-7xl font-bold text-black tracking-tight">
+          {value}
+        </h3>
         <p className="mt-6 text-xl font-medium text-gray-900">{title}</p>
         <p className="text-base mt-1 text-gray-500">{description}</p>
       </div>
@@ -92,9 +94,9 @@ export default function LocalWorkforce() {
             viewport={{ once: true }}
             className="max-w-xl mx-auto mt-6 text-xl text-gray-600 md:mt-10"
           >
-            We're committed to supporting local professionals and small businesses
-            in your community. Our platform connects skilled workers with the
-            people who need them most.
+            We're committed to supporting local professionals and small
+            businesses in your community. Our platform connects skilled workers
+            with the people who need them most.
           </motion.p>
 
           {/* Stats section with proper centering */}
@@ -124,9 +126,7 @@ export default function LocalWorkforce() {
             transition={{ duration: 0.5, delay: 0.4 }}
             viewport={{ once: true }}
             className="mt-16"
-          >
-            
-          </motion.div>
+          ></motion.div>
         </div>
       </div>
     </section>

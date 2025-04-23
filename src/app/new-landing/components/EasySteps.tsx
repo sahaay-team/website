@@ -1,4 +1,4 @@
-// TODO: Main idea of this page was to have a full background image for this section. 
+// TODO: Main idea of this page was to have a full background image for this section.
 // The image will have people oin the far right side and rest of hte left side would be plain and thats where the text would be.
 // Currently iamge is not
 
@@ -14,25 +14,27 @@ const steps = [
   {
     number: "01",
     title: "Tell us what you need",
-    description: "Choose from our wide range of services and describe your requirements"
+    description:
+      "Choose from our wide range of services and describe your requirements",
   },
   {
     number: "02",
     title: "Match with professionals",
-    description: "We'll connect you with verified experts in your area"
+    description: "We'll connect you with verified experts in your area",
   },
   {
     number: "03",
     title: "Get it done!",
-    description: "Your task gets completed with quality assurance and satisfaction"
-  }
+    description:
+      "Your task gets completed with quality assurance and satisfaction",
+  },
 ];
 
 export default function EasySteps() {
   const controls = useAnimation();
   const [ref, inView] = useInView({
     threshold: 0.5,
-    triggerOnce: true
+    triggerOnce: true,
   });
 
   React.useEffect(() => {
@@ -55,12 +57,16 @@ export default function EasySteps() {
     visible: {
       opacity: 1,
       x: 0,
-      transition: { duration: 0.6 }
+      transition: { duration: 0.6 },
     },
   };
 
   return (
-    <section id="easy-steps" className="relative h-screen flex items-center" ref={ref}>
+    <section
+      id="easy-steps"
+      className="relative h-screen flex items-center"
+      ref={ref}
+    >
       <div className="absolute inset-0 z-0">
         <Image
           src={EasyStepsBGImg}
@@ -82,13 +88,17 @@ export default function EasySteps() {
               visible: {
                 opacity: 1,
                 y: 0,
-                transition: { duration: 0.6 }
-              }
+                transition: { duration: 0.6 },
+              },
             }}
             className="text-left mb-12"
           >
-            <span className="text-white text-7xl font-bold block mb-2">Sahaay</span>
-            <span className="text-white text-5xl font-bold block">is as easy as 1, 2, 3</span>
+            <span className="text-white text-7xl font-bold block mb-2">
+              Sahaay
+            </span>
+            <span className="text-white text-5xl font-bold block">
+              is as easy as 1, 2, 3
+            </span>
           </motion.h2>
 
           <motion.div
@@ -110,7 +120,9 @@ export default function EasySteps() {
                   <h3 className="text-3xl font-semibold mb-4 text-white border-b-2 border-white inline-block pb-2">
                     {step.title}
                   </h3>
-                  <p className="text-white text-xl leading-relaxed">{step.description}</p>
+                  <p className="text-white text-xl leading-relaxed">
+                    {step.description}
+                  </p>
                 </div>
               </motion.div>
             ))}
@@ -120,12 +132,3 @@ export default function EasySteps() {
     </section>
   );
 }
-
-
-
-
-
-
-
-
-
