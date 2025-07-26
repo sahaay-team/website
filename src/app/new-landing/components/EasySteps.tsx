@@ -75,7 +75,7 @@ export default function EasySteps() {
           className="object-cover object-center"
           priority
         />
-        <div className="absolute inset-0 bg-black/30" />
+        <div className="absolute inset-0 bg-black/10" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
